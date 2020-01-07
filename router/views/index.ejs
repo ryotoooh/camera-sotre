@@ -1,0 +1,21 @@
+<% include ./includes/head %>
+<% include ./includes/nav %>
+
+
+<main>
+    <div class="txt-center">
+        <%
+            let images = [
+                            {key: 'Canon camera', value: 'images/canon.jpg'},
+                            {key: 'Yashica camera', value: 'images/yashica.jpg'},
+                            {key: 'Polaroid camera', value: 'images/polaroid.jpg'}
+                         ];
+            images.forEach(function(value){
+                %><img src="<%= value.value %>" class="main-img" alt="<%= value.key %> image" /><%
+            });
+        %>
+
+    </div>
+</main>
+
+<% include includes/footer %>

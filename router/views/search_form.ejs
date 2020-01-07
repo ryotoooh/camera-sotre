@@ -1,0 +1,23 @@
+<% include ./includes/head %>
+<% include ./includes/nav %>
+
+<main>
+    <div class="ml-s mr-s container">
+        <form action="/search" method="get" class="mt-s">
+            <div>
+                <label for="colour">Search for a camera</label>
+            </div>
+            <div class="mt-xs">
+                <select name="camera" class="select-simple">
+                    <option value="canon">Canon</option>
+                    <option value="yashica">Yashica</option>
+                    <option value="polaroid">Polaroid</option>
+                    <option value="leica">Leica</option>
+                </select>
+                <input type="submit" value="Search" class="btn btn-simple" />
+            </div>
+        </form>
+    </div>
+</main>
+
+<% include includes/footer %>

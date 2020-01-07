@@ -1,0 +1,17 @@
+<% include ./includes/head %>
+<% include ./includes/nav %>
+
+<main>
+    <div>
+        <%
+            if (cameraModel && description) {
+                %><h2><%= cameraModel %></h2>
+                <p class="ml-s mr-s container txt-ms"><%= description %></p><%
+            } else {
+                %><h2>No text: please fill in the both fields.</h2><%
+            }
+        %>
+    </div>
+</main>
+
+<% include includes/footer %>

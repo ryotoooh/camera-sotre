@@ -1,0 +1,26 @@
+<% include ./includes/head %>
+<% include ./includes/nav %>
+
+<main>
+    <div class="ml-s mr-s container">
+        <form action="/post" method="post" class="mt-s">
+            <div>
+                <label for="cameraModel">Camera Model: </label>
+            </div>
+            <div class="my-s mx-0">
+                <input type="text" name="cameraModel" class="input-txt" />
+            </div>
+            <div>
+                <label for="description">Description: </label>
+            </div>
+            <div class="my-s mx-0">
+                <textarea name="description" class="input-txtarea"></textarea>
+            </div>
+            <div>
+                <input type="submit" value="Post" class="btn btn-simple" />
+            </div>
+        </form>
+    </div>
+</main>
+
+<% include includes/footer %>

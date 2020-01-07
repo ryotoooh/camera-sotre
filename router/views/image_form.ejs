@@ -1,0 +1,21 @@
+<% include ./includes/head %>
+<% include ./includes/nav %>
+
+<main>
+    <div class="ml-s mr-s container">
+        <form action="/upload_image" method="post" enctype="multipart/form-data" class="mt-s">
+            <div>
+                <label for="cameramodel">Find an image</label>
+                <p>File size limit: 200KB</p>
+            </div>
+            <div class="my-s mx-0">
+                <input type="file" name="image" class="btn input-file" />
+            </div>
+            <div>
+                <input type="submit" value="Upload" class="btn btn-simple" />
+            </div>
+        </form>
+    </div>
+</main>
+
+<% include includes/footer %>

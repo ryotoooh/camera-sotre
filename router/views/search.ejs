@@ -1,0 +1,54 @@
+<% include ./includes/head %>
+<% include ./includes/nav %>
+
+<main>
+    <div>
+        <%
+            let description, cite, imgUrl;
+
+            switch(camera){
+                case 'canon':
+                    description = 'Canon Inc. (Kiyanon Kabushiki-gaisha) is a Japanese multinational corporation specializing in the manufacture of imaging and optical products, including cameras, camcorders, photocopiers, steppers, computer printers and medical equipment. It\'s headquartered in Ōta, Tokyo, Japan. Canon has a primary listing on the Tokyo Stock Exchange and is a constituent of the TOPIX index. It has a secondary listing on the New York Stock Exchange.';
+                    cite = 'Wikipedia contributors. (2019, July 3). Canon Inc.. In Wikipedia, The Free Encyclopedia. Retrieved 02:06, August 5, 2019, from https://en.wikipedia.org/w/index.php?title=Canon_Inc.&oldid=904627567';
+                    imgUrl = 'images/canon.jpg';
+                break;
+
+                case 'yashica':
+                    description = 'Yashica was a Japanese manufacturer of cameras, originally active from 1949 until 2005 when its then-owner, Kyocera, ceased production. In 2008, the Yashica name reappeared on cameras produced by the Hong Kong-based MF Jebsen Group. In 2015, trademark rights were transferred to Yashica International Company Limited and appointed 100 Enterprises International Group Co. Limited as Yashica Global Sole Agent.';
+                    cite = 'Wikipedia contributors. (2019, July 3). Yashica. In Wikipedia, The Free Encyclopedia. Retrieved 02:03, August 5, 2019, from https://en.wikipedia.org/w/index.php?title=Yashica&oldid=904570384';
+                    imgUrl = 'images/yashica.jpg';
+                break;
+
+                case 'polaroid':
+                    description = 'Polaroid is an American company that is a brand licensor and marketer of its portfolio of consumer electronics to companies that distribute consumer electronics and eyewear. It is best known for its Polaroid instant film and cameras. In 2017, its parent company was acquired by Polish investor Oskar Smołokowski. The company was founded in 1937 by Edwin H. Land, to exploit the use of its Polaroid polarizing polymer. Land ran the company until 1981. Its peak employment was 21,000 in 1978, and its peak revenue was $3 billion in 1991.';
+                    cite = 'Wikipedia contributors. (2019, July 12). Polaroid Corporation. In Wikipedia, The Free Encyclopedia. Retrieved 02:08, August 5, 2019, from https://en.wikipedia.org/w/index.php?title=Polaroid_Corporation&oldid=905904616';
+                    imgUrl = 'images/polaroid.jpg';
+                break;
+
+                default:
+                    description = 'There is no information on this camera';
+
+            };
+
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            };
+        %>
+        <h2>Search result for <%= capitalizeFirstLetter(camera) %></h2>
+        <%  //check if imgUrl is assigned
+            if (imgUrl != undefined) { %>
+            <div class="txt-center">
+                <img src="<%= imgUrl %>" class="main-img" alt="<%= capitalizeFirstLetter(camera) %> image" />
+            </div>
+        <%  } %>
+            <div class="ml-s mr-s container txt-ms"><%= description %>
+        <%  //check if cite is assigned
+            if (cite != undefined) { %>
+                <p class="cite"><%= cite %></p>
+        <%  } %>
+            </div>
+
+    </div>
+</main>
+
+<% include includes/footer %>
